@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="register">
+        <h1>Registration</h1>
+        <form action="/register" method="POST">
+        {%csrf_token%} 
+        Name <input type="text" name="name">
+        <br>
+        Email Address <input type="text" name="email">
+        <br>
+        Password <input type="password" name="password"> (must be 8 characters or more)
+        <br>
+        Confirm Password <input type="password" name="confirm_pw">
+        <br>
+        <a href="/register"><button>Register</button></a>
+        </form>
+        {%for message in messages%}
+        <p>{{message}}</p>
+        {%endfor%}
+    </div>
+
+    <div id="login">
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+        {%csrf_token%} 
+        Email <input type="text" name="email">
+        <br>
+        Password <input type="password" name="password">
+        <br>
+        <a href="/login"><button>Log In</button></a>
+        </form>
+
+    </div>
+</body>
+</html>

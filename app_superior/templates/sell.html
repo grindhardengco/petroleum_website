@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        
+        <h1>Submit your property...</h1>
+        
+        <form action="/superior/add_property" method='POST'>
+        {%csrf_token%}
+        <p>Contact</p>
+        Name: <input type="text" name='name'>
+        Email: <input type="text" name='email'>
+        Phone: <input type="tel" name='phone' placeholder='(123) 456-7890'>
+        <p>Property Type: </p>
+        Operated <input type="checkbox" id='operated' name='operated'>
+        Non-Operated <input type="checkbox" id="non_op" name='non_op'>
+        Royalty <input type="checkbox" id='royalty' name='royalty'>
+        Current Operator: <input type="text" name='operator'>
+        State(s): <input type="text" name='state'>
+        County(ies): <input type="text" name='county'>
+        Field(s): (if not selling all properties in county) <input type="text" name='field'>
+        Lease(s): (if not selling all properties in county) <input type="text" name='lease'>
+        API list (copy & paste): <input type="text" name='api_list'>
+        Comments: <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        <a href="/superior/add_property"><button>Submit</button></a>
+        </form>
+    
+    </div>
+</body>
+</html>
