@@ -47,3 +47,13 @@ def thank_partner(request):
 def dashboard(request):
 
     return render(request, 'dashboard.html')
+
+def admin(request):
+
+    return render(request, 'admin.html')
+
+def edit_prop(request, prop_id):
+    context = {
+        'property': Property.objects.get(id=prop_id),
+    }
+    return render(request, 'edit_prop.html', context)

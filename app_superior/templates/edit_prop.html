@@ -8,10 +8,8 @@
 </head>
 <body>
     <div id="container">
-        
-        <h1>Submit your property...</h1>
-        
-        <form action="/superior/add_property" method='POST'>
+        <h3>Update/edit Property</h3>
+        <form action="/superior/admin/update_prop" method="POST">
         {%csrf_token%}
         <p>Contact</p>
         Name: <input type="text" name='name'>
@@ -28,9 +26,12 @@
         Lease(s): (if not selling all properties in county) <input type="text" name='lease'>
         Upload API list: <input type="file" name='api_list'>
         Comments: <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        
+        
         <a href="/superior/add_property"><button>Submit</button></a>
+
+        
         </form>
-    
     </div>
 </body>
 </html>

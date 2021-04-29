@@ -13,4 +13,6 @@ urlpatterns = [
     path('/add_partner', views.add_partner),
     path('/thank_partner', views.thank_partner),
     path('/dashboard', views.dashboard),
+    path('admin', views.admin),
+    path('/admin/property/<int:prop_id>', views.edit_prop),
 ]
