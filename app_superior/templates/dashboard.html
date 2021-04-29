@@ -8,8 +8,13 @@
 </head>
 <body>
     <div id="container">
-        <h1>PLACEHOLDER FOR A DASHBOARD</h1>
+        <h1>Welcome to your dashboard for {{request.session.company}}.</h1>
+        <a href="/edit_account">Account Info</a>
         <a href="/logout">Log out</a>
+        <p>To submit a property for Superior's consideration to purchase click <a href='/superior/sell'>here.</a></p>
+        <p>To submit a request for consulting or field supervision services click <a href='/superior/help'>here.</a></p>
+        <p>To submit a request to partner with Superior Petroleum on an acquisition click <a href='/superior/partner'>here.</a></p>
+        <p>PLACEHOLDER TO view company's projects and partnerships</p>
     </div>
 </body>
 </html>

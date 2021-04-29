@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <a href="/logout">Log out</a>
+        <h1>Edit your account information</h1>
+        <p>To return to your company's dashboard click <a href='/superior/dashboard'>here.</a></p>
+        <form action="/update_account" method='POST'>
+        {%csrf_token%} 
+        Contact Name: <input type="text" name='name' value='{{user.name}}'><br>
+        Email: <input type="text" name='email' value='{{user.email}}'><br>
+        Company Name: <input type="text" name='company' value='{{user.company}}'><br>
+        Password: <input type="password" name='password'> (must be 8 characters or more) <br>
+        Confirm password: <input type="password" name='confirm_pw'><br>
+        <a href="/update_account"><button>Update</button></a>
+        </form>
+        {%for message in messages%}
+        <p>{{message}}</p>
+        {%endfor%}
+    </div>
+</body>
+</html>

@@ -11,9 +11,11 @@
         <h1>Registration</h1>
         <form action="/register" method="POST">
         {%csrf_token%} 
-        Name <input type="text" name="name">
+        Contact Name <input type="text" name="name">
         <br>
         Email Address <input type="text" name="email">
+        <br>
+        Company Name <input type="text" name='company'>
         <br>
         Password <input type="password" name="password"> (must be 8 characters or more)
         <br>

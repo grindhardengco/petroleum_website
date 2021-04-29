@@ -8,29 +8,39 @@
 </head>
 <body>
     <div id="container">
+        <a href="/superior/admin">Return to Admin page</a>
+        <a href="/superior/home">Return to Superior Home page</a>
+        <a href="/logout">Log out</a>
         <h3>Update/edit Property</h3>
-        <form action="/superior/admin/update_prop" method="POST">
+        <form action="/superior/admin/update_prop/{{property.id}}" method="POST">
         {%csrf_token%}
         <p>Contact</p>
-        Name: <input type="text" name='name'>
-        Email: <input type="text" name='email'>
-        Phone: <input type="tel" name='phone' placeholder='(123) 456-7890'>
+        Name: <input type="text" name='name' value='{{property.name}}'>
+        Email: <input type="text" name='email' value='{{property.email}}'>
+        Phone: <input type="tel" name='phone' value='{{property.phone}}'>
         <p>Property Type: </p>
-        Operated <input type="checkbox" id='operated' name='operated'>
+        Operated <input type="checkbox" id='operated' name='operated' checked="checked">
         Non-Operated <input type="checkbox" id="non_op" name='non_op'>
         Royalty <input type="checkbox" id='royalty' name='royalty'>
-        Current Operator: <input type="text" name='operator'>
-        State(s): <input type="text" name='state'>
-        County(ies): <input type="text" name='county'>
-        Field(s): (if not selling all properties in county) <input type="text" name='field'>
-        Lease(s): (if not selling all properties in county) <input type="text" name='lease'>
-        Upload API list: <input type="file" name='api_list'>
-        Comments: <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
-        
-        
-        <a href="/superior/add_property"><button>Submit</button></a>
-
-        
+        Current Operator: <input type="text" name='operator' value='{{property.operator}}'>
+        State(s): <input type="text" name='state' value='{{property.state}}'>
+        County(ies): <input type="text" name='county' value='{{property.county}}'>
+        Field(s): (if not selling all properties in county) <input type="text" name='field' value='{{property.field}}'>
+        Lease(s): (if not selling all properties in county) <input type="text" name='lease' value='{{property.lease}}'>
+        Comments: <textarea name="comments" id="comments" cols="30" rows="10">{{property.comments}}</textarea>
+        <p>Admin inputs: </p>
+        Deliverables: <input type="text" name='deliverables' value='{{property.deliverables}}'>
+        Deadline: <input type="date" name='deadline' value='{{property.deadline}}'>
+        Description: <textarea name="description" id="description" cols="30" rows="10">{{property.description}}</textarea>
+        Approved (True/False): <input type="text" name='approved' value='{{property.approved}}'>
+        Date Evaluation Complete: <input type="date" name='date_evaluation_complete' value='{{property.date_evaluation_complete}}'>
+        Offer: $<input type="number" name='offer' value='{{property.offer}}'>
+        Accepted (True/False): <input type="text" name='accepted' value='{{property.accepted}}'>
+        Active Display (True/False): <input type="text" name='active_display' value='{{property.active_display}}'>
+        {%for messages in message%}
+        <p>{{message}}</p>
+        {%endfor%}
+        <a href="/superior/admin/update_prop/{{property.id}}"><button>Submit</button></a>
         </form>
     </div>
 </body>

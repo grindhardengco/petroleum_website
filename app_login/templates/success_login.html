@@ -8,7 +8,11 @@
 </head>
 <body>
     <a href="/logout">Log out</a>
-    <h3>Success!  Welcome {{request.session.user_name}}</h3>
-    <p>Successfully logged in!</p>
+    <h3>Success!  Welcome {{request.session.user_name}}.</h3>
+    <p>You are logged in to Superior Petroleum's website.</p>
+    <p>To see your company's dashboard click <a href='/superior/dashboard'>here.</a></p>
+    <p>To submit a property for Superior's consideration to purchase click <a href='/superior/sell'>here.</a></p>
+    <p>To submit a request for consulting or field supervision services click <a href='/superior/help'>here.</a></p>
+    <p>To submit a request to partner with Superior Petroleum on an acquisition click <a href='/superior/partner'>here.</a></p>
 </body>
 </html>

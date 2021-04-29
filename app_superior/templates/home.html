@@ -14,7 +14,10 @@
         <a href="/superior/sell">Want to sell?</a>
         <a href="/superior/help">Want help?</a>
         <a href="/superior/partner">Want to partner?</a>
-        <a href="/login">Current Customer Login</a>
+        <a href="/login">New Customer Registration and Current Customer Login</a>
+        {%for message in messages%}
+        <p>{{message}}</p>
+        {%endfor%}
         <h3>Useful information...</h3>
     </div>
 </body>

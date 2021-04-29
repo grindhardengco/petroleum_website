@@ -8,12 +8,14 @@
 </head>
 <body>
     <div id="container">
+        <a href="/superior/home">Return to Superior Home page</a>
+        <a href="/logout">Log out</a>
         <h1>Superior Petroleum Admin Page</h1>
         <h3>Select a project to modify:</h3>
         <div>
             <h5>Properties</h5>
             {%for property in properties%}
-            <a href="/superior/admin/property/{{property.id}}">{{property.name}} {{property.email}} {{property/created_at}}</a>
+            <a href="/superior/admin/property/{{property.id}}">{{property.name}} {{property.email}} {{property.created_at}}</a>
             {%endfor%}
         </div>
 
